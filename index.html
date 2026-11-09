@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#103950">
+  <meta name="description" content="ViaCerta: planeje sua viagem e controle cada gasto até o destino.">
+  <meta name="color-scheme" content="light">
+  <title>ViaCerta — Sua viagem sob controle</title>
+  <style>
+:root{--navy:#103950;--navy2:#164e63;--teal:#078d83;--mint:#e5f5ef;--gold:#f5c56b;--bg:#f3f6f7;--card:#fff;--ink:#193642;--muted:#70838b;--line:#e4eaed;--danger:#bd5546;--warn:#ac6b19;--shadow:0 8px 30px rgba(19,48,62,.045);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:var(--bg);min-height:100dvh}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #68c5bd;outline-offset:2px}.shell{max-width:680px;margin:0 auto;min-height:100dvh;padding-bottom:calc(91px + env(safe-area-inset-bottom))}.topbar{height:85px;background:var(--navy);color:#fff;display:flex;align-items:center;gap:11px;padding:12px 20px;position:sticky;top:0;z-index:10;box-shadow:0 4px 16px #10395016}.brandmark{width:44px;height:44px;flex:none;border:1px solid #ffffff24;border-radius:14px;display:grid;place-items:center;color:#fff;background:#ffffff14}.brandmark svg{width:34px}.brandcopy{display:flex;flex-direction:column;gap:2px;line-height:1.15}.brandcopy strong{font-size:23px;letter-spacing:-1px}.brandcopy span{color:#b8d7dd;font-size:10.5px;letter-spacing:.24px}.header-action{margin-left:auto}.icon-btn{background:#ffffff18;border:1px solid #ffffff38;color:#fff;border-radius:12px;width:40px;height:40px;font-size:21px}.view{padding:19px 17px 30px}.eyebrow{color:var(--teal);text-transform:uppercase;font-size:10px;letter-spacing:1.6px;font-weight:850}.page-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.page-head h1{font-size:25px;letter-spacing:-1px;margin:3px 0 4px;line-height:1.2}.subtle{color:var(--muted);font-size:13px;line-height:1.45}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.card+.card,.card+.section-head,.section-head+.card{margin-top:13px}.hero{background:linear-gradient(130deg,#103950,#166879);color:white;border:0;padding:21px;overflow:hidden;position:relative;box-shadow:0 12px 34px #10395018}.hero:before{content:'◌';font-size:210px;line-height:1;position:absolute;right:-36px;top:-67px;opacity:.08}.hero .eyebrow{color:#afddd7}.hero h2{font-size:20px;margin:6px 0 5px;letter-spacing:-.5px;position:relative}.hero .helper{font-size:12px;color:#bfe0e2;position:relative}.hero-main{font-size:32px;font-weight:850;letter-spacing:-1.5px;margin:15px 0 3px;position:relative}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;position:relative}.hero-stat{background:#ffffff14;border:1px solid #ffffff2b;border-radius:13px;padding:11px}.hero-stat span{display:block;font-size:11px;color:#bed8de}.hero-stat b{display:block;font-size:16px;margin-top:4px;letter-spacing:-.4px}.hero-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;position:relative}.btn{border:none;border-radius:12px;background:var(--teal);color:#fff;padding:12px 16px;font-size:13px;font-weight:760;display:inline-flex;justify-content:center;align-items:center;gap:7px;min-height:44px;text-decoration:none}.btn:disabled{opacity:.48;cursor:not-allowed}.btn.secondary{background:#ebf4f4;color:#0a655f}.btn.light{background:#fff;color:var(--navy)}.btn.ghost{background:transparent;color:var(--teal);border:1px solid #9bd6d1}.btn.danger{background:#fff0ed;color:#b44230}.btn.wide{width:100%}.btn.tiny{padding:9px 12px;min-height:35px;font-size:12px}.text-btn{padding:6px 0;border:0;background:transparent;color:var(--teal);font-weight:750;font-size:12px}.section-head{display:flex;align-items:center;justify-content:space-between;margin:22px 1px 12px;gap:12px}.section-head h3{margin:0;font-size:16px;letter-spacing:-.4px}.two-stat{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:13px}.stat-card small{display:block;color:var(--muted);font-size:11px}.stat-card strong{display:block;font-size:22px;margin:4px 0 2px;letter-spacing:-.8px}.stat-card .hint{color:var(--muted);font-size:11px}.progress-track{height:10px;background:#e9eff1;border-radius:20px;overflow:hidden;margin:13px 0 7px}.progress-fill{height:100%;background:var(--teal);border-radius:20px;transition:width .2s}.progress-fill.over{background:#d5814d}.inline-space{display:flex;align-items:center;justify-content:space-between;gap:10px}.tiny-label{font-size:11px;color:var(--muted)}.over-text{color:var(--danger)!important}.ok-text{color:var(--teal)!important}.warning{border-left:3px solid #d9a54e;background:#fff8e8;padding:11px 12px;border-radius:9px;color:#875a18;font-size:12px;line-height:1.5;margin:13px 0 0}.category-row{padding:11px 0;border-bottom:1px solid var(--line)}.category-row:last-child{border:0;padding-bottom:0}.category-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}.category-head strong{font-size:12px}.category-head span{color:var(--muted);font-size:11px}.category-head .negative{color:var(--danger)}.mini-track{height:5px;background:#eef2f3;overflow:hidden;border-radius:9px;margin-top:8px}.mini-fill{height:100%;background:var(--teal);border-radius:9px}.mini-fill.red{background:#d77b61}.expense-entry{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid var(--line)}.expense-entry:last-child{border:0}.emoji-round{width:38px;height:38px;border-radius:12px;background:#ecf6f4;display:grid;place-items:center;flex:none;font-size:19px}.expense-copy{min-width:0;flex:1}.expense-copy b{display:block;font-size:13px}.expense-copy span{display:block;font-size:11px;color:var(--muted);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.expense-value{text-align:right;font-weight:800;font-size:13px;white-space:nowrap}.expense-value .text-btn{display:block;margin-left:auto;font-size:10px}.trip-card{display:flex;gap:13px;align-items:flex-start;margin-bottom:10px}.trip-card .trip-icon{background:#e5f2ef;width:45px;height:45px;border-radius:13px;display:grid;place-items:center;font-size:22px;flex:none}.trip-copy{flex:1;min-width:0}.trip-copy h3{margin:0 0 4px;font-size:15px}.trip-copy p{font-size:12px;color:var(--muted);margin:0;line-height:1.5}.pill{font-size:10px;color:#067b72;background:#e0f5ef;border-radius:99px;padding:5px 9px;font-weight:750;white-space:nowrap}.pill.work{color:#3664a1;background:#eaf1fb}.trip-stats{display:flex;justify-content:space-between;margin-top:13px;padding-top:12px;border-top:1px solid var(--line);gap:8px}.trip-stats span{display:block;color:var(--muted);font-size:10px}.trip-stats b{font-size:12px}.trip-actions{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap}.empty{padding:32px 22px;text-align:center;background:#fff;border-radius:18px;border:1px dashed #cbdadd}.empty .big{font-size:43px}.empty h3{margin:10px 0 5px;font-size:17px}.empty p{color:var(--muted);font-size:13px;line-height:1.55}.empty .btn{margin-top:8px}.tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680px,100%);height:calc(73px + env(safe-area-inset-bottom));padding:8px 10px calc(7px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #e5edef;z-index:20;box-shadow:0 -6px 18px #183a4612;display:flex;justify-content:space-around}.nav-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:67px;padding:3px 8px;border:none;border-radius:11px;background:transparent;color:#8a9da5;font-size:10px;font-weight:720}.nav-item.active{color:var(--teal)}.nav-ico{font-size:25px;line-height:1.1}.add-nav{color:var(--navy)}.add-disc{height:37px;width:37px;background:var(--gold);color:#203e4d;border-radius:14px;display:grid;place-items:center;font-size:27px;line-height:1;margin-top:-17px;box-shadow:0 4px 12px #f5c56b80}.modal-layer{position:fixed;inset:0;z-index:40;display:flex;align-items:flex-end;justify-content:center}.modal-layer.hidden{display:none}.modal-scrim{position:absolute;inset:0;background:rgba(12,33,45,.62)}.modal{position:relative;background:#fff;width:min(680px,100%);max-height:min(91dvh,940px);overflow:auto;border-radius:23px 23px 0 0;padding:21px 19px calc(27px + env(safe-area-inset-bottom));box-shadow:0 -14px 40px #0a293c40}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}.modal-head h2{font-size:20px;margin:0;letter-spacing:-.5px}.close{border:0;border-radius:10px;width:36px;height:36px;background:#edf2f3;color:#3a515a;font-size:22px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:5px;min-width:0;margin-bottom:12px}.field label{font-size:12px;font-weight:730}.field input,.field select,.field textarea{width:100%;background:#f9fbfb;border:1px solid #dce6e8;border-radius:11px;min-height:44px;padding:10px 12px;color:#183943;outline-offset:1px;font-size:14px}.field textarea{resize:vertical;min-height:74px}.field input:focus,.field select:focus,.field textarea:focus{border-color:#3aa8a0}.form-title{margin:18px 0 11px;color:var(--navy);font-size:14px;font-weight:850;padding-top:13px;border-top:1px solid var(--line)}.checkline{display:flex;align-items:center;gap:9px;font-size:13px;color:#3a515a;padding:6px 0 13px}.checkline input{width:18px;height:18px;accent-color:var(--teal)}.form-tip{background:#f0f8f7;color:#396f6c;font-size:12px;line-height:1.5;padding:11px;border-radius:10px;margin:5px 0 15px}.form-footer{position:sticky;bottom:-27px;background:linear-gradient(transparent,#fff 18%);padding-top:18px;padding-bottom:6px;display:flex;gap:10px}.form-footer .btn{flex:1}.form-error{color:var(--danger);font-size:12px;min-height:0;margin:5px 0}.route-box{background:#f0f8f8;border:1px solid #dceeed;border-radius:14px;padding:15px;margin:12px 0}.route-box .route-value{font-size:24px;font-weight:850;letter-spacing:-.8px;margin:6px 0}.route-box .help{font-size:11px;color:#5f8182}.route-box .btn{margin-top:10px}.tag{display:inline-flex;padding:5px 8px;background:#edf4f8;border-radius:99px;font-size:10px;color:#52748a;font-weight:770}.info-row{display:flex;justify-content:space-between;gap:15px;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}.info-row:last-child{border:0}.info-row span{color:var(--muted)}.info-row b{text-align:right}.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(16px);width:max-content;max-width:90vw;background:#193947;color:white;padding:11px 18px;border-radius:12px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:70;text-align:center;box-shadow:0 8px 25px #10395044}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.route-steps{display:flex;gap:6px;flex-wrap:wrap;font-size:11px;color:#497076;margin-top:8px}.route-steps span{background:#e8f4f1;border-radius:7px;padding:5px 8px}.footer-notice{color:#82949b;font-size:11px;line-height:1.6;padding:15px 4px}.controls-inline{display:flex;gap:8px;flex-wrap:wrap}.button-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.period{color:var(--muted);font-size:12px}.separator{border:0;border-top:1px solid var(--line);margin:17px 0}.metric-note{background:#f4f8fa;border-radius:11px;padding:11px;font-size:11px;color:#5a7780;line-height:1.5}.quick-category{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:15px}.quick-category button{background:#f6f9f9;border:1px solid #e0e8e9;border-radius:12px;padding:11px 7px;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px;font-weight:720;color:#546e77}.quick-category button.selected{border-color:#16a69a;background:#eaf8f4;color:#096c64}.quick-category .e{font-size:22px}.highlight-money{font-size:18px;font-weight:850}.small-note{font-size:11px;color:var(--muted);line-height:1.55}.utility-row{display:flex;gap:9px;flex-wrap:wrap}.fit-link{display:inline-flex;align-items:center;gap:6px;color:#087f77;font-size:12px;font-weight:760;text-decoration:none}.helper-list{font-size:12px;color:#586e76;line-height:1.65;padding-left:17px}.tap-edit{color:#147d79}.result-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.result-row>div{background:#f3f7f7;border-radius:11px;padding:12px}.result-row small{font-size:11px;color:var(--muted)}.result-row strong{font-size:19px;display:block;margin-top:4px}.hide{display:none!important}@media(min-width:720px){.topbar{border-radius:0 0 16px 16px}.view{padding:26px 25px}.tabbar{border-radius:17px 17px 0 0}.modal-layer{align-items:center}.modal{border-radius:20px;max-height:88dvh;padding-bottom:27px}.form-footer{bottom:-27px}}@media(max-width:365px){.hero-main{font-size:27px}.brandcopy strong{font-size:21px}.form-grid{gap:8px}.view{padding-left:12px;padding-right:12px}.nav-item{min-width:58px}}
+
+/* ViaCerta 1.2: posição e km restantes */
+.position-card{margin-top:13px;background:linear-gradient(160deg,#fff,#f4faf8);border-color:#cfe7e0}
+.position-title{font-weight:830;font-size:15px;color:var(--navy);margin-bottom:5px}
+.position-card .btn{margin-top:10px}
+.position-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:11px 0 5px}
+.position-stats>div{background:#ebf6f3;border-radius:11px;padding:11px;min-width:0}
+.position-stats small{display:block;color:#688684;font-size:11px}
+.position-stats b{font-size:17px;display:block;word-wrap:break-word;margin-top:4px}
+
+/* ViaCerta 1.3: seleção de combustível com unidade automática */
+.fuel-unit-info{font-size:12px;color:#0c6e65;background:#eef8f5;border-radius:10px;padding:9px 12px;margin:2px 0 10px;font-weight:700}
+
+</style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brandmark" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M9 31 19 11h6l10 20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 28h6" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M22 18v3" stroke="#facb6c" stroke-width="3.4" stroke-linecap="round"/><path d="M22 27v2" stroke="#facb6c" stroke-width="3.4" stroke-linecap="round"/></svg></div>
+      <div class="brandcopy"><strong>ViaCerta</strong><span>Planeje. Viaje. Economize.</span></div>
+      <button id="btn-settings" class="icon-btn header-action" aria-label="Opções e backup" title="Opções e backup">⚙</button>
+    </header>
+    <main id="main" tabindex="-1" aria-live="polite"></main>
+    <nav class="tabbar" aria-label="Navegação principal">
+      <button class="nav-item active" data-nav="inicio"><span class="nav-ico">⌂</span><span>Início</span></button>
+      <button class="nav-item" data-nav="viagens"><span class="nav-ico">♧</span><span>Viagens</span></button>
+      <button class="nav-item add-nav" data-action="new-expense"><span class="add-disc">+</span><span>Gasto</span></button>
+      <button class="nav-item" data-nav="veiculos"><span class="nav-ico">▣</span><span>Veículos</span></button>
+    </nav>
+  </div>
+  <div id="modal-layer" class="modal-layer hidden" aria-hidden="true"><div class="modal-scrim" data-action="close-modal"></div><section id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></section></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+/* ViaCerta 1.5.1 — correção do orçamento inicial do combustível. */
+(() => {
+'use strict';
+const KEY = 'viacerta-v1-data';
+const VEHICLE_TYPES = [
+ ['proprio','🚗 Próprio'],['empresa','🏢 Da empresa'],
+ ['alugado','🔑 Alugado'],['emprestado','🤝 Emprestado'],
+ ['outro','🚘 Outro']
+];
+const vehicleTypeLabel = value => VEHICLE_TYPES.find(([id])=>id===value)?.[1] || 'Não informado';
+const vehicleTypeSelect = (name, value='proprio') => `<div class="field"><label for="f-${name}">Tipo de veículo</label><select id="f-${name}" name="${name}">${VEHICLE_TYPES.map(([id,label])=>`<option value="${id}" ${value===id?'selected':''}>${label}</option>`).join('')}</select></div>`;
+// Somente a escolha do combustível é manual: unidade e rótulos são automáticos.
+const FUELS = [
+ ['gasolina','⛽ Gasolina','L','Litros abastecidos'],
+ ['etanol','🌱 Etanol','L','Litros abastecidos'],
+ ['diesel','🚚 Diesel','L','Litros abastecidos'],
+ ['gnv','💨 Gás (GNV)','m³','Metros cúbicos abastecidos'],
+ ['eletrico','⚡ Recarga elétrica','kWh','Energia recarregada (kWh)']
+];
+const fuelConfig = kind => FUELS.find(([id])=>id===kind)||FUELS[0];
+const fuelKindFromText = value => {const s=String(value||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+ if(s.includes('etanol')||s.includes('alcool'))return 'etanol';
+ if(s.includes('diesel'))return 'diesel';
+ if(s.includes('gnv')||s.includes('gas natural'))return 'gnv';
+ if(s.includes('eletric')||s.includes('recarga'))return 'eletrico';
+ if(s.includes('gasolina'))return 'gasolina';
+ return null;
+};
+const fuelQuantity = e => fnum(e.quantity??e.liters);
+const expenseFuelKind = e => e.fuelKind||fuelKindFromText(e.fuelType)||null;
+const expenseFuelUnit = e => e.fuelUnit || (expenseFuelKind(e)?fuelConfig(expenseFuelKind(e))[2]:'L');
+const tripFuelUnit = t => fuelConfig(fuelKindFromText(t.fuelType))[2];
+const CATS = [
+ ['combustivel','⛽','Combustível'], ['alimentacao','🍴','Alimentação'],
+ ['hospedagem','🛏️','Hospedagem'], ['pedagio','🛣️','Pedágios'],
+ ['conveniencia','☕','Conveniência'], ['estacionamento','🅿️','Estacionamento'],
+ ['outros','🧾','Outros'], ['imprevistos','🧰','Imprevistos']
+];
+const defaults = () => ({trips:[],expenses:[],vehicles:[],activeTripId:null,lastFuelKind:'gasolina'});
+let data = load();
+let tab = 'inicio';
+let modalType = '';
+let editingId = null;
+let category = 'alimentacao';
+let pendingTrip = null; // ID da viagem de ida ao criar o retorno
+let toastTimer = null;
+const $ = id => document.getElementById(id);
+const esc = v => String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money = v => Number(v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const kmFmt = v => Number(v||0).toLocaleString('pt-BR',{maximumFractionDigits:1});
+const fnum = v => {let s=String(v??'').trim().replace(/\s/g,'');if(s.includes(',')) s=s.replace(/\./g,'').replace(',','.');else if(/^\d{1,3}(\.\d{3})+$/.test(s)) s=s.replace(/\./g,'');let n=Number(s);return Number.isFinite(n)?n:0;};
+const today=()=>{let d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');};
+const uid=()=> (globalThis.crypto?.randomUUID?.() || (Date.now().toString(36)+Math.random().toString(36).slice(2)));
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&Array.isArray(s.trips)&&Array.isArray(s.expenses)&&Array.isArray(s.vehicles))return {...defaults(),...s};}catch(_){}return defaults();}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(data));return true;}catch(e){alert('Não foi possível salvar no aparelho. Libere espaço ou exporte um backup.');return false;}}
+function tell(message){const t=$('toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3500);}
+function getTrip(){return data.trips.find(t=>t.id===data.activeTripId)||data.trips[0]||null;}
+function datesCount(a,b){if(!a||!b)return 1;const x=new Date(a+'T12:00:00'),y=new Date(b+'T12:00:00');return Math.max(1,Math.ceil((y-x)/86400000)+1);}
+function tripKm(t){return Math.max(0,Number(t.manualKm)>0?Number(t.manualKm):Number(t.routeKm)||0);}
+function baselineBudget(t,p){return t.originalBudget&&Number.isFinite(t.originalBudget.total)?t.originalBudget:p;}
+// Corrige uma falha das versões anteriores: a viagem podia ser salva sem km,
+// gerando combustível previsto R$ 0. Se a distância só era informada depois de
+// lançar um gasto, o orçamento original congelado continuava sem combustível.
+// Ajustamos UMA ÚNICA VEZ essa parcela ausente, preservando demais categorias,
+// os gastos realizados e uma previsão original que já possuía quilometragem.
+function repairMissingFuelBaseline(t){
+ const b=t.originalBudget;
+ if(!b||!b.by||!Number.isFinite(b.total)||fnum(b.by.combustivel)>0||fnum(t.originalKm)>0)return false;
+ const km=tripKm(t),p=plan(t);
+ if(km<=0||p.by.combustivel<=0)return false;
+ b.by.combustivel=p.by.combustivel;
+ b.total+=p.by.combustivel;
+ t.originalKm=km;
+ b.fuelBaselineRestored=true;
+ return true;
+}
+function migrateOlderTrips(){
+ let modified=false;
+ for(const t of data.trips){
+   if(!t.originalBudget){
+     const p=plan(t);t.originalBudget={total:p.total,by:{...p.by},capturedAt:Date.now(),migrated:true};t.originalKm=tripKm(t);modified=true;
+   }else if(repairMissingFuelBaseline(t)) modified=true;
+ }
+ if(modified)save();
+}
+function refreshBaseline(t){
+ if((t.progress&&t.progress.checkedAt)||data.expenses.some(e=>e.tripId===t.id)){
+   repairMissingFuelBaseline(t);
+   return;
+ }
+ const p=plan(t);
+ t.originalBudget={total:p.total,by:{...p.by},capturedAt:Date.now()};
+ t.originalKm=tripKm(t);
+}
+function plan(t){const distance=tripKm(t), eff=fnum(t.fuelKmL), price=fnum(t.fuelPrice);const budget={
+ combustivel:eff>0?distance/eff*price:0,
+ alimentacao:Math.max(1,fnum(t.people))*datesCount(t.dateStart,t.dateEnd)*fnum(t.foodPerDay),
+ hospedagem:fnum(t.nights)*fnum(t.nightRate),pedagio:fnum(t.tollBudget),
+ conveniencia:fnum(t.convenienceBudget),estacionamento:fnum(t.parkingBudget),
+ outros:fnum(t.otherBudget),imprevistos:fnum(t.reserveBudget)};
+ return {by:budget,total:Object.values(budget).reduce((a,b)=>a+b,0)};
+}
+function spent(t){let by=Object.fromEntries(CATS.map(c=>[c[0],0]));for(const e of data.expenses){if(e.tripId===t.id&&Object.hasOwn(by,e.category))by[e.category]+=fnum(e.amount);}return {by,total:Object.values(by).reduce((a,b)=>a+b,0)};}
+function fuelReport(t){
+ const fills=data.expenses.filter(e=>e.tripId===t.id&&e.category==='combustivel').sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));
+ const measuredByKind={}; let lastFull=null,quantitySince=0,homogeneous=true;
+ for(const f of fills){
+   const kind=expenseFuelKind(f),unit=expenseFuelUnit(f),qty=fuelQuantity(f);
+   if(lastFull){
+     quantitySince+=qty;
+     if(!kind||kind!==lastFull.kind||unit!==lastFull.unit)homogeneous=false;
+   }
+   if(f.fullTank&&fnum(f.odometer)>0&&unit!=='kWh'){
+     if(lastFull&&homogeneous&&kind&&fnum(f.odometer)>fnum(lastFull.odometer)&&quantitySince>0){
+       const val=(fnum(f.odometer)-fnum(lastFull.odometer))/quantitySince;
+       if(val>0&&val<=100)measuredByKind[kind]=val;
+     }
+     lastFull={odometer:fnum(f.odometer),kind,unit};quantitySince=0;homogeneous=true;
+   }
+ }
+ const kinds=[...new Set(fills.map(expenseFuelKind).filter(Boolean))];
+ const chosenKind=fuelKindFromText(t.fuelType);
+ // Nunca misturar gasolina, etanol, GNV, diesel ou kWh em uma única média.
+ const trustedKind=chosenKind && kinds.every(k=>k===chosenKind) ? chosenKind : (!chosenKind&&kinds.length===1&&fills.every(f=>expenseFuelKind(f)===kinds[0]) ? kinds[0] : null);
+ const measured=trustedKind?measuredByKind[trustedKind]||null:null;
+ const effective=measured||fnum(t.fuelKmL);
+ const unit=trustedKind?fuelConfig(trustedKind)[2]:tripFuelUnit(t);
+ const eligible=fills.filter(f=>fnum(f.odometer)>0).at(-1);
+ const traveled=eligible&&fnum(t.initialOdometer)>0&&fnum(eligible.odometer)>=fnum(t.initialOdometer)?fnum(eligible.odometer)-fnum(t.initialOdometer):null;
+ const priced=fills.filter(f=>expenseFuelKind(f)===trustedKind&&expenseFuelUnit(f)===unit&&fuelQuantity(f)>0&&fnum(f.amount)>0);
+ const quantity=priced.reduce((sum,f)=>sum+fuelQuantity(f),0);
+ const weighted=quantity?priced.reduce((sum,f)=>sum+fnum(f.amount),0)/quantity:0;
+ return {effective,measured,measuredByKind,traveled,price:weighted||fnum(t.fuelPrice),unit,fills};
+}
+function projected(t,p,s){
+ const fr=fuelReport(t),progress=t.progress&&!t.progress.needsRecalc?t.progress:null;
+ const reference=baselineBudget(t,p);
+ let fuel;
+ if(progress && Number.isFinite(progress.remainingKm) && fr.effective>0){
+   fuel=s.by.combustivel+Math.max(0,progress.remainingKm)/fr.effective*fr.price;
+ }else if(fr.traveled!==null&&fr.effective>0&&tripKm(t)>0){
+   const left=Math.max(0,tripKm(t)-fr.traveled);
+   fuel=s.by.combustivel+left/fr.effective*fr.price;
+ }else fuel=Math.max(s.by.combustivel,fr.effective>0 && tripKm(t)>0?tripKm(t)/fr.effective*fr.price:Math.max(p.by.combustivel,reference.by.combustivel||0));
+ let total=fuel;
+ for(const [c] of CATS){
+   if(c==='combustivel')continue;
+   if(c==='pedagio'&&progress&&Number.isFinite(progress.remainingToll))total+=s.by[c]+Math.max(0,progress.remainingToll);
+   else total+=Math.max(p.by[c],reference.by[c]||0,s.by[c]);
+ }
+ return {total,fuel,fr};
+}
+// Etapas são encerradas separadamente: a chegada da ida vira o marco inicial da volta.
+// Compatibilidade: viagens legadas já criadas com ida e volta seguem legíveis.
+// Novas viagens têm sempre um percurso único; retorno é outra viagem vinculada.
+const stageOf = t => t?.closures?.volta || (t?.closures?.ida && !t.roundTrip) ? 'concluida' : t?.closures?.ida ? 'volta' : 'ida';
+const pairedReturn = t => data.trips.find(x=>x.returnFromTripId===t.id)||null;
+const pairedOrigin = t => data.trips.find(x=>x.id===t.returnFromTripId)||null;
+const isSingleJourney = t => !t.roundTrip;
+const phaseLabel = phase => phase==='volta'?'Volta':'Ida';
+const closureOf = (t,phase) => t?.closures?.[phase]||null;
+const isStageClosed = (t,phase) => !!closureOf(t,phase);
+const fuelFills = (t,phase) => data.expenses.filter(e=>e.tripId===t.id && e.category==='combustivel' && (e.phase||'ida')===phase)
+ .sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));
+const stageExpenses = (t,phase) => data.expenses.filter(e=>e.tripId===t.id && (e.phase||'ida')===phase);
+function totalsByFuel(fills){
+ const out={};
+ for(const e of fills){const kind=expenseFuelKind(e)||'gasolina',cfg=fuelConfig(kind),qty=fuelQuantity(e);
+  if(!out[kind])out[kind]={kind,label:cfg[1],unit:cfg[2],qty:0,value:0};
+  out[kind].qty+=qty;out[kind].value+=fnum(e.amount);
+ }
+ return Object.values(out).map(x=>({...x,averagePrice:x.qty>0?x.value/x.qty:null}));
+}
+function stageReport(t,phase){
+ const c=closureOf(t,phase);if(!c)return null;
+ const entries=fuelFills(t,phase),endIndex=entries.findIndex(e=>e.id===c.endFuelId),endFill=entries[endIndex];
+ const startOdo=Number(c.startOdo),endOdo=Number(endFill?.odometer);
+ const valid=!!endFill&&!!endFill.fullTank&&Number.isFinite(startOdo)&&startOdo>0&&endOdo>startOdo;
+ if(!valid)return {valid:false,phase,reason:'O abastecimento final foi alterado ou removido. Confira os registros.'};
+ // Somente abastecimentos posteriores ao marco inicial, inclusive a reposição de chegada.
+ const segmentFills=entries.slice(0,endIndex+1).filter(e=>fnum(e.odometer)===0||fnum(e.odometer)>startOdo);
+ const missing=segmentFills.filter(e=>fuelQuantity(e)<=0);
+ if(missing.length)return {valid:false,phase,reason:'Há abastecimentos deste trecho sem quantidade registrada. Preencha os litros, m³ ou kWh antes de conferir a média.'};
+ const consumed=segmentFills;
+ const groups=totalsByFuel(consumed),cash=stageExpenses(t,phase),cashTotal=cash.reduce((a,e)=>a+fnum(e.amount),0);
+ const nonFuel=cash.filter(e=>e.category!=='combustivel').reduce((a,e)=>a+fnum(e.amount),0);
+ const fuelCost=groups.reduce((a,g)=>a+g.value,0),km=endOdo-startOdo;
+ const allL=groups.length>0&&groups.every(g=>g.unit==='L'),allGnv=groups.length===1&&groups[0].unit==='m³',allElectric=groups.length===1&&groups[0].unit==='kWh';
+ const unit=allL?'L':allGnv?'m³':allElectric?'kWh':null;
+ const quantity=unit?groups.reduce((a,g)=>a+g.qty,0):null;
+ const efficiency=quantity>0?km/quantity:null;
+ const avgPrice=quantity>0?fuelCost/quantity:null;
+ return {valid:true,phase,startOdo,endOdo,km,groups,unit,quantity,efficiency,avgPrice,fuelCost,nonFuel,cashTotal,otherCost:nonFuel,
+  totalCost:fuelCost+nonFuel,costKm:km>0?fuelCost/km:null,totalCostKm:km>0?(fuelCost+nonFuel)/km:null};
+}
+function allReports(t){return ['ida','volta'].map(ph=>stageReport(t,ph)).filter(Boolean);}
+function reportCard(r,t){
+ if(!r.valid)return `<div class="warning">⚠ ${esc(r.reason)} <b>${phaseLabel(r.phase)}</b></div>`;
+ const unitText=r.unit?'km/'+r.unit:'—';
+ return `<div class="card report-card"><div class="inline-space"><b>🏁 ${t?.returnFromTripId?'Retorno finalizado':t?.roundTrip?phaseLabel(r.phase)+' finalizada':'Viagem finalizada'}</b><span class="pill">Tanque cheio</span></div>
+ <div class="result-row"><div><small>Distância real</small><strong>${kmFmt(r.km)} km</strong></div>
+ <div><small>Consumo médio</small><strong>${r.efficiency?kmFmt(r.efficiency)+' '+esc(unitText):'Não comparável'}</strong></div>
+ <div><small>Combustível consumido</small><strong>${money(r.fuelCost)}</strong></div>
+ <div><small>Custo combustível / km</small><strong>${r.costKm!==null?money(r.costKm)+'/km':'—'}</strong></div></div>
+ <div class="form-title">Abastecimentos desde a saída</div>
+ ${r.groups.map(g=>`<div class="info-row"><span>${esc(g.label)} • ${kmFmt(g.qty)} ${esc(g.unit)}</span><b>${money(g.value)}</b></div>`).join('')}
+ ${r.unit?`<div class="info-row"><span>Quantidade total</span><b>${kmFmt(r.quantity)} ${esc(r.unit)}</b></div><div class="info-row"><span>Preço médio ponderado</span><b>${money(r.avgPrice)}/${esc(r.unit)}</b></div>`:`<p class="small-note">Combustíveis com unidades diferentes: mostramos os totais por tipo, sem somar L, m³ e kWh nem calcular uma média de consumo enganosa.</p>`}
+ <div class="info-row"><span>Outras despesas do trecho</span><b>${money(r.otherCost)}</b></div>
+ <div class="info-row"><span><b>Custo estimado do trecho</b></span><b>${money(r.totalCost)}</b></div>
+ <div class="info-row"><span>Desembolso registrado no trecho</span><b>${money(r.cashTotal)}</b></div>
+ <p class="small-note">O abastecimento inicial, se houve compra antes da saída, conta no desembolso, mas não entra no combustível consumido após a saída. Consumo misto gasolina/etanol é apurado em km/L para o tanque como um todo.</p></div>`;
+}
+function singleJourneyActions(t){
+ if(!isSingleJourney(t))return '';
+ const related=pairedReturn(t),origin=pairedOrigin(t);
+ if(related)return `<div class="utility-row" style="margin:13px 0"><button class="btn secondary tiny" data-action="select-trip" data-id="${esc(related.id)}">↩ Abrir viagem de retorno</button><button class="btn secondary tiny" data-action="compare-trip" data-id="${esc(t.id)}">📊 Comparar ida e volta</button></div>`;
+ if(origin)return `<div class="utility-row" style="margin:13px 0"><button class="btn secondary tiny" data-action="select-trip" data-id="${esc(origin.id)}">➡ Abrir viagem de ida</button><button class="btn secondary tiny" data-action="compare-trip" data-id="${esc(t.id)}">📊 Comparar ida e volta</button></div>`;
+ return `<div class="card" style="margin:12px 0;box-shadow:none;background:#f0faf7"><b>↩ Precisa voltar?</b><p class="small-note">Crie o retorno com origem e destino invertidos, mantendo gastos e relatórios independentes. A chegada com tanque cheio pode ser usada como referência de partida.</p><button class="btn wide" data-action="create-return" data-id="${esc(t.id)}">↩ Criar viagem de retorno</button></div>`;
+}
+function compareTripModal(id){
+ const t=data.trips.find(x=>x.id===id);if(!t)return;
+ const origin=pairedOrigin(t)||t,back=pairedReturn(origin);
+ if(!back){tell('Finalize a ida e crie a viagem de retorno para comparar.');return;}
+ const one=stageReport(origin,'ida'),two=stageReport(back,'ida');
+ const completed=one?.valid&&two?.valid;
+ const cols=[origin,back].map((x,i)=>{
+  const r=i?two:one,spentTotal=spent(x).total;
+  return `<div class="card" style="box-shadow:none"><b>${i?'↩ Retorno':'➡ Ida'}</b><p class="small-note">${esc(x.origin)} → ${esc(x.destination)}</p><div class="info-row"><span>Orçamento inicial</span><b>${money(baselineBudget(x,plan(x)).total)}</b></div><div class="info-row"><span>Desembolso registrado</span><b>${money(spentTotal)}</b></div>${r?.valid?`<div class="info-row"><span>Distância medida</span><b>${kmFmt(r.km)} km</b></div><div class="info-row"><span>Custo apurado</span><b>${money(r.totalCost)}</b></div><div class="info-row"><span>Custo total/km</span><b>${money(r.totalCostKm)}/km</b></div>`:'<p class="small-note">Aguardando encerramento com tanque cheio.</p>'}</div>`;}).join('');
+ const initial=baselineBudget(origin,plan(origin)).total+baselineBudget(back,plan(back)).total;
+ const cost=completed?one.totalCost+two.totalCost:null;
+ openModal(`${modalHeader('Comparativo ida × volta')}<p class="subtle">Viagens independentes, reunidas apenas no relatório.</p>${cols}<div class="card" style="margin-top:12px;box-shadow:none;background:#f0faf7"><b>📊 Resultado consolidado</b><div class="info-row"><span>Orçamento total</span><b>${money(initial)}</b></div><div class="info-row"><span>Desembolso total</span><b>${money(spent(origin).total+spent(back).total)}</b></div><div class="info-row"><span>Custo total apurado</span><b>${cost===null?'Aguardando retorno':money(cost)}</b></div>${cost===null?'':`<div class="info-row"><span>Diferença do orçamento</span><b>${money(initial-cost)}</b></div><div class="info-row"><span>Distância total medida</span><b>${kmFmt(one.km+two.km)} km</b></div>`}</div><p class="small-note">O abastecimento final da ida é referência inicial do retorno e não será duplicado no cálculo de consumo.</p>`,'comparison',origin.id);
+}
+function closingStatus(t){
+ const state=stageOf(t),reps=allReports(t);
+ if(state==='concluida'){
+  const valid=reps.filter(r=>r.valid),fuel=valid.reduce((a,r)=>a+r.fuelCost,0),km=valid.reduce((a,r)=>a+r.km,0);
+  const initial=baselineBudget(t,plan(t)).total,allValid=valid.length===reps.length,cost=valid.reduce((a,r)=>a+r.totalCost,0),difference=initial-cost;
+  return `<div class="card summary-close"><div class="inline-space"><b>✅ Viagem finalizada</b><span class="pill">Concluída</span></div>
+  <div class="result-row"><div><small>Previsto inicial</small><strong>${money(initial)}</strong></div><div><small>Custo apurado dos trechos</small><strong>${allValid?money(cost):'Confira os dados'}</strong></div><div><small>Diferença do previsto</small><strong class="${difference<0?'over-text':'ok-text'}">${allValid?money(difference):'—'}</strong></div><div><small>Desembolso registrado</small><strong>${money(spent(t).total)}</strong></div></div>
+  <p class="small-note">Combustível reposto após o tanque cheio de saída: <b>${money(fuel)}</b> para <b>${kmFmt(km)} km</b> aferidos. O desembolso inclui eventuais compras para encher o tanque antes de sair; por isso pode ser diferente do custo apurado.</p>
+  ${reps.map(r=>reportCard(r,t)).join('')}
+  ${singleJourneyActions(t)}
+  <button class="btn tiny secondary" data-action="reopen-stage" data-id="${esc(t.id)}">↶ Reabrir última etapa</button></div>`;
+ }
+ if(state==='volta')return `<div class="card summary-close"><div class="inline-space"><b>✅ Ida finalizada</b><span class="pill">Volta em andamento</span></div><p class="small-note">Registre os abastecimentos de retorno. O tanque cheio na chegada da ida será o marco inicial da volta.</p><button class="btn wide" data-action="close-stage" data-id="${esc(t.id)}">🏁 Finalizar viagem (volta)</button>${reps.map(r=>reportCard(r,t)).join('')}<button class="btn tiny secondary" data-action="reopen-stage" data-id="${esc(t.id)}">↶ Reabrir ida</button></div>`;
+ return `<div class="card summary-close"><b>🏁 Ao chegar ao destino</b><p class="small-note">Complete o tanque, lance esse abastecimento com a quilometragem e toque em ${t.roundTrip?'Finalizar trecho':'Finalizar viagem'}.</p><button class="btn wide" data-action="close-stage" data-id="${esc(t.id)}">🏁 ${t.roundTrip?'Finalizar trecho (ida)':'Finalizar viagem'}</button></div>`;
+}
+function progressSummary(t){
+ if(stageOf(t)==='concluida')return '';
+ const a=t.progress;
+ if(!a)return `<div class="card position-card"><div class="position-title">📍 Progresso da viagem</div><p class="small-note">Sem rastreamento contínuo. Ao chegar a uma cidade, atualize manualmente ou use o GPS somente naquele momento.</p><button class="btn tiny" data-action="progress" data-id="${esc(t.id)}">📍 Atualizar localização / trecho restante</button></div>`;
+ const valid=!a.needsRecalc;
+ const label=a.label|| (a.phase==='volta'?'Trecho de volta':'Trecho de ida');
+ return `<div class="card position-card"><div class="position-title">📍 ${esc(label)} ${valid?'':'• Rota alterada'}</div>
+ <p class="small-note">${valid?'Atualizado em '+new Date(a.checkedAt).toLocaleString('pt-BR'):'Atualize a localização novamente para recalcular os custos da nova rota.'} • ${a.source==='gps'?'GPS sob demanda':'Informado manualmente'}</p>
+ <div class="position-stats"><div><small>Km restantes</small><b>${valid?kmFmt(a.remainingKm)+' km':'—'}</b></div><div><small>Pedágios restantes</small><b>${valid&&Number.isFinite(a.remainingToll)?money(a.remainingToll):'Não disponível'}</b></div></div>
+ ${valid&&Number.isFinite(t.originalKm)&&t.originalKm>0?'<p class="small-note">Distância de origem: '+kmFmt(t.originalKm)+' km. A diferença para o restante é apenas estimativa, pois você pode ter mudado de caminho.</p>':''}
+ <p class="small-note">Para uma projeção correta, registre os abastecimentos e pedágios já pagos.</p><button class="btn tiny" data-action="progress" data-id="${esc(t.id)}">↻ Atualizar trecho restante</button></div>`;
+}
+
+function aBtn(text,action,cls='secondary',args=''){return `<button class="btn ${cls}" data-action="${action}" ${args}>${text}</button>`;}
+function selectTripOptions(selected){return data.trips.map(t=>`<option value="${esc(t.id)}" ${selected===t.id?'selected':''}>${esc(t.name)}</option>`).join('');}
+function render(){document.querySelectorAll('[data-nav]').forEach(e=>e.classList.toggle('active',e.dataset.nav===tab));
+ const t=getTrip();$('main').innerHTML=tab==='inicio'?renderHome(t):tab==='viagens'?renderTrips():renderVehicles();}
+function head(title,subtitle,button=''){return `<div class="page-head"><div><div class="eyebrow">ViaCerta • 1.5</div><h1>${title}</h1><div class="subtle">${subtitle}</div></div>${button}</div>`;}
+function renderHome(t){if(!t)return `<div class="view">${head('Tudo começa aqui','Sua próxima viagem, sem sustos no orçamento.')}
+ <div class="empty"><div class="big">🚗</div><h3>Planeje sua primeira viagem</h3><p>Informe o trajeto, escolha o veículo e preveja os gastos. Depois, registre suas despesas durante o percurso.</p>${aBtn('＋ Criar viagem','new-trip')}</div>
+ <div class="section-head"><h3>Como o ViaCerta ajuda</h3></div><div class="card"><div class="info-row"><b>① Antes</b><span>Planejamento de custos</span></div><div class="info-row"><b>② Durante</b><span>Gastos rápidos e projeção</span></div><div class="info-row"><b>③ Depois</b><span>Comparação previsto × real</span></div></div><p class="footer-notice">Os dados são guardados neste aparelho. Faça backups pelo botão ⚙ para não perdê-los.</p></div>`;
+ const p=plan(t),base=baselineBudget(t,p),s=spent(t),proj=projected(t,p,s),balance=base.total-s.total,perc=base.total>0?100*s.total/base.total:0;
+ const over=proj.total>base.total+0.01;
+ return `<div class="view">
+ ${head('Minha viagem','Acompanhe os números que realmente importam.',`<button class="btn tiny secondary" data-action="new-trip">＋ Nova</button>`)}
+ <div class="card hero"><div class="eyebrow">${t.kind==='trabalho'?'💼 Trabalho':'🌴 Lazer'} • ${esc(t.dateStart||'Data livre')}</div><h2>${esc(t.name)}</h2><div class="helper">${esc(t.origin)} → ${esc(t.destination)} • ${stageOf(t)==='concluida'?'✅ Concluída':t.returnFromTripId?'↩ Retorno':stageOf(t)==='volta'?'↩ Retorno legado':'➡ Ida'}</div><div class="hero-main">${money(balance)}</div><div class="helper">${balance>=0?'Disponível no orçamento':'Acima do orçamento previsto'}</div><div class="hero-grid"><div class="hero-stat"><span>Planejado</span><b>${money(base.total)}</b></div><div class="hero-stat"><span>Já gasto</span><b>${money(s.total)}</b></div></div><div class="hero-actions">${stageOf(t)==='concluida'?'':aBtn('＋ Registrar gasto','new-expense','light')}${aBtn('Detalhes da viagem','trip-detail','secondary',`data-id="${esc(t.id)}"`)}</div></div>
+ <div class="two-stat"><div class="card stat-card"><small>${stageOf(t)==='concluida'?'Custo real apurado':'Projeção até o fim'+(t.progress?.needsRecalc?' (provisória)':'')}</small><strong class="${over?'over-text':''}">${stageOf(t)==='concluida'&&allReports(t).every(r=>r.valid)?money(allReports(t).reduce((a,r)=>a+r.totalCost,0)):money(proj.total)}</strong><span class="hint">${stageOf(t)==='concluida'?'Tanque cheio a tanque cheio':'Gastos + estimativa restante'}</span></div><div class="card stat-card"><small>Distância planejada</small><strong>${kmFmt(t.originalKm??tripKm(t))} <span style="font-size:13px">km</span></strong><span class="hint">${t.manualKm>0?'Ajustada por você':t.routeKm>0?'Calculada pelo Google':'Ainda não definida'}</span></div></div>
+ ${closingStatus(t)}
+ ${progressSummary(t)}
+ ${over?`<div class="warning">⚠ A projeção está ${money(proj.total-base.total)} acima do orçamento. Vale revisar as categorias abaixo.</div>`:''}
+ <div class="card" style="margin-top:13px"><div class="inline-space"><b style="font-size:14px">Orçamento utilizado</b><b style="font-size:13px" class="${perc>100?'over-text':''}">${Math.round(perc)}%</b></div><div class="progress-track"><div class="progress-fill ${perc>100?'over':''}" style="width:${Math.min(100,Math.max(0,perc))}%"></div></div><div class="inline-space tiny-label"><span>Realizado ${money(s.total)}</span><span>Previsto inicial ${money(base.total)}</span></div></div>
+ <div class="section-head"><h3>Gastos por categoria</h3><button data-action="new-expense" class="text-btn">＋ Gasto</button></div><div class="card">${CATS.map(([id,emoji,label])=>{const val=s.by[id],exp=base.by[id]??0,pc=exp>0?val/exp*100:val>0?100:0;return `<div class="category-row"><div class="category-head"><div>${emoji} <strong>${label}</strong></div><span class="${exp<val?'negative':''}">${money(val)} / ${money(exp)}</span></div><div class="mini-track"><div class="mini-fill ${val>exp?'red':''}" style="width:${Math.min(100,pc)}%"></div></div></div>`}).join('')}</div>
+ <div class="section-head"><h3>Últimos lançamentos</h3><button class="text-btn" data-nav="viagens">Ver viagens</button></div><div class="card">${renderExpenseList(t.id,4)}</div>
+ ${t.kind==='trabalho'?`<div class="card" style="margin-top:13px"><b>💼 Resultado do atendimento</b><div class="info-row"><span>Receita informada</span><b>${money(t.revenue)}</b></div><div class="info-row"><span>Resultado estimado após viagem</span><b class="${t.revenue-proj.total<0?'over-text':'ok-text'}">${money(fnum(t.revenue)-proj.total)}</b></div><p class="small-note">Não inclui impostos, peças nem outros custos da empresa.</p></div>`:''}
+ <p class="footer-notice">Projeções são estimativas; consulte os detalhes para conferir os cálculos. Dados salvos somente neste dispositivo.</p></div>`;
+}
+function renderExpenseList(tripId,limit=100){let exp=data.expenses.filter(e=>e.tripId===tripId).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).slice(0,limit);
+ if(!exp.length)return `<div class="subtle" style="padding:10px 1px">Nenhuma despesa lançada nesta viagem.</div>`;
+ return exp.map(e=>{const c=CATS.find(c=>c[0]===e.category)||CATS.at(-2);return `<div class="expense-entry"><div class="emoji-round">${c[1]}</div><div class="expense-copy"><b>${c[2]}</b><span>${esc(e.date||'')}${e.note?' • '+esc(e.note):''}${e.category==='combustivel'&&fuelQuantity(e)?' • '+(expenseFuelKind(e)?fuelConfig(expenseFuelKind(e))[1].replace(/^.*? /,''):'Combustível')+' • '+kmFmt(fuelQuantity(e))+' '+esc(expenseFuelUnit(e)):''}</span></div><div class="expense-value">${money(e.amount)}<button class="text-btn" data-action="edit-expense" data-id="${esc(e.id)}">Editar</button></div></div>`}).join('');}
+function renderTrips(){return `<div class="view">${head('Minhas viagens','Planejadas, em andamento ou concluídas.',`<button class="btn tiny" data-action="new-trip">＋ Nova</button>`)}${data.trips.length?data.trips.slice().sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).map(t=>{const p=baselineBudget(t,plan(t)),s=spent(t);return `<div class="card" style="margin-bottom:13px"><div class="trip-card"><div class="trip-icon">${t.kind==='trabalho'?'💼':'🌴'}</div><div class="trip-copy"><h3>${esc(t.name)}</h3><p>${esc(t.origin)} → ${esc(t.destination)}<br>${esc(t.dateStart)} • ${kmFmt(tripKm(t))} km</p></div><div class="pill ${t.kind==='trabalho'?'work':''}">${stageOf(t)==='concluida'?'✅ Concluída':t.returnFromTripId?'↩ Retorno':stageOf(t)==='volta'?'↩ Volta legada':t.kind==='trabalho'?'Trabalho':'Lazer'}</div></div><div class="trip-stats"><div><span>Previsto</span><b>${money(p.total)}</b></div><div><span>Gasto</span><b>${money(s.total)}</b></div><div><span>Diferença</span><b class="${s.total>p.total?'over-text':'ok-text'}">${money(p.total-s.total)}</b></div></div><div class="trip-actions"><button class="btn tiny" data-action="select-trip" data-id="${esc(t.id)}">${t.id===getTrip()?.id?'Abrir painel':'Selecionar'}</button><button class="btn tiny secondary" data-action="trip-detail" data-id="${esc(t.id)}">Detalhes</button><button class="btn tiny secondary" data-action="edit-trip" data-id="${esc(t.id)}">Editar</button>${stageOf(t)==='concluida'&&isSingleJourney(t)&&!pairedReturn(t)&&!t.returnFromTripId?`<button class="btn tiny" data-action="create-return" data-id="${esc(t.id)}">↩ Criar retorno</button>`:''}${(pairedReturn(t)||pairedOrigin(t))?`<button class="btn tiny secondary" data-action="compare-trip" data-id="${esc(t.id)}">Comparar ida e volta</button>`:''}</div></div>`}).join(''):`<div class="empty"><div class="big">🗺️</div><h3>Nenhuma viagem ainda</h3><p>Crie uma viagem para planejar seus custos.</p>${aBtn('＋ Criar viagem','new-trip')}</div>`}</div>`;}
+function renderVehicles(){return `<div class="view">${head('Meus veículos','Cadastre uma vez e reutilize nas viagens.',`<button class="btn tiny" data-action="new-vehicle">＋ Adicionar</button>`)}${data.vehicles.length?data.vehicles.map(v=>`<div class="card" style="margin-bottom:12px"><div class="trip-card"><div class="trip-icon">🚙</div><div class="trip-copy"><h3>${esc(v.name)}</h3><p>${esc(vehicleTypeLabel(v.ownership))} • ${esc(v.fuelType)} • ${kmFmt(v.kmL)} km/L<br>Preço de referência: ${money(v.price)}/L</p></div></div><div class="trip-actions"><button class="btn tiny secondary" data-action="edit-vehicle" data-id="${esc(v.id)}">Editar</button><button class="btn tiny danger" data-action="delete-vehicle" data-id="${esc(v.id)}">Excluir</button></div></div>`).join(''):`<div class="empty"><div class="big">🚙</div><h3>Seus veículos ficam aqui</h3><p>Informe o consumo médio do carro, moto ou veículo da empresa. Você também poderá utilizar veículos avulsos.</p>${aBtn('＋ Cadastrar veículo','new-vehicle')}</div>`}<p class="footer-notice">A média cadastrada é uma referência. O aplicativo pode estimar o consumo real com abastecimentos de tanque cheio.</p></div>`;}
+function openModal(body,type,id=null){modalType=type;editingId=id;$('modal').innerHTML=body;$('modal-layer').classList.remove('hidden');$('modal-layer').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>$('modal').querySelector('input:not([type=hidden]),select,button')?.focus(),50);}
+function closeModal(){modalType='';editingId=null;pendingTrip=null;$('modal-layer').classList.add('hidden');$('modal-layer').setAttribute('aria-hidden','true');document.body.style.overflow='';}
+const field=(label,name,value='',type='text',extra='')=>`<div class="field"><label for="f-${name}">${label}</label><input id="f-${name}" name="${name}" type="${type}" value="${esc(value)}" ${extra}></div>`;
+function modalHeader(title){return `<div class="modal-head"><h2 id="modal-title">${title}</h2><button type="button" class="close" data-action="close-modal" aria-label="Fechar">×</button></div>`;}
+function footer(saveLabel='Salvar'){return `<div id="form-error" class="form-error" role="alert"></div><div class="form-footer"><button type="button" class="btn secondary" data-action="close-modal">Cancelar</button><button type="submit" class="btn">${saveLabel}</button></div>`;}
+function tripModal(id=null,sourceId=null){
+ const source=sourceId?data.trips.find(t=>t.id===sourceId):null;
+ const inheritedOdo=source?fnum(source.closures?.ida?.endOdo):0;
+ const seed=source?{name:source.name.replace(/\s*[—-]\s*(ida|retorno|volta)$/i,'')+' — Retorno',kind:source.kind,origin:source.destination,destination:source.origin,stops:[...(source.stops||[])].reverse(),dateStart:source.dateEnd||today(),dateEnd:source.dateEnd||today(),vehicleId:source.vehicleId,vehicleName:source.vehicleName,vehicleOwnership:source.vehicleOwnership,fuelType:source.fuelType,fuelKmL:source.fuelKmL,fuelPrice:source.fuelPrice,people:source.people,foodPerDay:source.foodPerDay,nights:0,nightRate:source.nightRate,tollBudget:source.tollBudget,convenienceBudget:source.convenienceBudget,parkingBudget:source.parkingBudget,otherBudget:source.otherBudget,reserveBudget:source.reserveBudget,revenue:0,initialOdometer:inheritedOdo,manualKm:tripKm(source)}:{};
+ const t=data.trips.find(t=>t.id===id)||seed;pendingTrip=source?.id||null;let options=data.vehicles.map(v=>`<option value="${esc(v.id)}">${esc(v.name)} (${kmFmt(v.kmL)} km/L)</option>`).join('');
+const veh=t.vehicleId&&data.vehicles.find(v=>v.id===t.vehicleId)?t.vehicleId:'avulso';
+openModal(`${modalHeader(id?'Editar viagem':source?'Planejar viagem de retorno':'Planejar nova viagem')}<form id="trip-form" autocomplete="off">
+ <div class="form-grid">${field('Nome da viagem','name',t.name||'','text','required maxlength="90"')}<div class="field"><label for="f-kind">Tipo</label><select id="f-kind" name="kind"><option value="lazer" ${t.kind!=='trabalho'?'selected':''}>🌴 Lazer</option><option value="trabalho" ${t.kind==='trabalho'?'selected':''}>💼 Trabalho</option></select></div></div>
+ <div class="form-grid">${field('Cidade de origem','origin',t.origin||'','text','required maxlength="130"')}${field('Destino','destination',t.destination||'','text','required maxlength="130"')}</div>
+ <div class="field"><label for="f-stops">Cidades por onde deseja passar (uma por linha)</label><textarea id="f-stops" name="stops" rows="2" placeholder="Ex.: Campo Grande, MS">${esc((t.stops||[]).join('\n'))}</textarea></div>
+ ${id&&t.roundTrip?'<div class="warning">Viagem antiga cadastrada como ida e volta: seus dados serão mantidos no formato anterior. Para novas viagens, criamos ida e retorno separadamente.</div><label class="checkline"><input type="checkbox" name="roundTrip" checked disabled> Ida e volta (formato legado)</label>':'<div class="form-tip">➡ Cada viagem corresponde a um único percurso. Ao concluir, você poderá tocar em “Criar viagem de retorno”.</div>'}
+ ${source?`<div class="form-tip">↩ Origem e destino foram invertidos. O odômetro final da ida (${kmFmt(inheritedOdo)} km) será a referência inicial. A distância e o orçamento foram copiados como estimativa: confira a data, rota e pedágios antes de salvar.</div>`:''}
+ <div class="form-grid">${field('Data de saída','dateStart',t.dateStart||today(),'date','required')}${field('Data final','dateEnd',t.dateEnd||today(),'date','required')}</div>
+ <div class="field"><label for="f-vehicleId">Veículo</label><select id="f-vehicleId" name="vehicleId"><option value="avulso">➕ Informar veículo não cadastrado</option>${options}</select></div>
+ ${vehicleTypeSelect('vehicleOwnership',t.vehicleOwnership||data.vehicles.find(v=>v.id===veh)?.ownership||'proprio')}
+ <p class="small-note">Quer reutilizar seu carro nas próximas viagens? Vá à aba Veículos e toque em + Adicionar. Depois ele aparecerá na lista acima.</p>
+ <div class="form-grid">${field('Modelo / identificação','vehicleName',t.vehicleName||'Meu carro','text','maxlength="80"')}${field('Combustível','fuelType',t.fuelType||'Gasolina','text','maxlength="40"')}${field('Consumo médio (km/L)','fuelKmL',t.fuelKmL||12,'text','inputmode="decimal" required')}${field('Preço do litro (R$)','fuelPrice',t.fuelPrice||6,'text','inputmode="decimal" required')}</div>
+ <div class="form-grid">${field('Distância total (km)','manualKm',t.manualKm||'','text','inputmode="decimal" placeholder="Pode ajustar depois"')}${field('Odômetro na saída (opcional)','initialOdometer',t.initialOdometer||'','text','inputmode="decimal" '+(source||t.returnFromTripId?'readonly':''))}</div><div class="form-tip">⛽ Para medir o consumo pelo método tanque cheio a tanque cheio, anote o odômetro e confirme o tanque cheio ao finalizar a viagem. Se abastecer antes da saída, registre também o valor pago.</div>
+ <div class="form-tip">📍 O Google pode ser aberto pelo aplicativo para consultar a rota. Ajuste a distância manualmente; a consulta automática será integrada depois.</div>
+ <div class="form-title">Orçamento da viagem</div>
+ <div class="form-grid">${field('Pessoas','people',t.people||1,'number','min="1" max="30" required')}${field('Alimentação por pessoa/dia (R$)','foodPerDay',t.foodPerDay??75,'text','inputmode="decimal"')}${field('Noites de hospedagem','nights',t.nights||0,'number','min="0" max="365"')}${field('Diária da hospedagem (R$)','nightRate',t.nightRate||0,'text','inputmode="decimal"')}${field('Pedágios (R$)','tollBudget',t.tollBudget||0,'text','inputmode="decimal"')}${field('Conveniência (R$)','convenienceBudget',t.convenienceBudget||0,'text','inputmode="decimal"')}${field('Estacionamento (R$)','parkingBudget',t.parkingBudget||0,'text','inputmode="decimal"')}${field('Outros (R$)','otherBudget',t.otherBudget||0,'text','inputmode="decimal"')}${field('Reserva imprevistos (R$)','reserveBudget',t.reserveBudget||0,'text','inputmode="decimal"')}${field('Receita do serviço (R$)','revenue',t.revenue||0,'text','inputmode="decimal"')}</div>
+ <p class="small-note">A receita só aparece nos resultados das viagens de trabalho. Valores podem ser modificados depois.</p>${footer(id?'Salvar alterações':source?'Criar retorno':'Criar viagem')}</form>`,'trip',id);
+ $('f-vehicleId').value=veh;
+ $('f-vehicleId').addEventListener('change',e=>{const v=data.vehicles.find(x=>x.id===e.target.value);if(v){$('f-vehicleName').value=v.name;$('f-fuelType').value=v.fuelType;$('f-fuelKmL').value=v.kmL;$('f-fuelPrice').value=v.price;$('f-vehicleOwnership').value=v.ownership||'proprio';}});
+}
+function vehicleModal(id=null){const v=data.vehicles.find(x=>x.id===id)||{};openModal(`${modalHeader(id?'Editar veículo':'Novo veículo')}<form id="vehicle-form">${field('Nome do veículo','name',v.name||'','text','required placeholder="Ex.: Carro da STE" maxlength="70"')}${vehicleTypeSelect('ownership',v.ownership||'proprio')}${field('Tipo de combustível','fuelType',v.fuelType||'Gasolina','text','required maxlength="40"')}<div class="form-grid">${field('Consumo (km/L)','kmL',v.kmL||12,'text','required inputmode="decimal"')}${field('Preço de referência por litro (R$)','price',v.price||6,'text','required inputmode="decimal"')}</div><div class="form-tip">O valor do combustível pode ser ajustado em cada viagem sem alterar o cadastro do veículo.</div>${footer()}</form>`,'vehicle',id);}
+function expenseModal(id=null){if(!data.trips.length){tell('Crie uma viagem antes de registrar gastos.');tripModal();return;}
+ const e=data.expenses.find(x=>x.id===id)||{};if(id){const closedT=data.trips.find(t=>t.id===e.tripId);if(closedT&&isStageClosed(closedT,e.phase||'ida')){tell('Esta etapa está finalizada. Reabra a etapa para corrigir despesas.');return;}}const activeTrip=e.tripId?data.trips.find(t=>t.id===e.tripId):getTrip();
+ if(!id&&activeTrip&&stageOf(activeTrip)==='concluida'){tell('Esta viagem foi concluída. Selecione outra viagem ou reabra a última etapa.');return;}
+ category=e.category||'alimentacao';
+ const fuelKind=expenseFuelKind(e)||data.lastFuelKind||'gasolina';
+ openModal(`${modalHeader(id?'Editar despesa':'＋ Despesa rápida')}<form id="expense-form"><div class="field"><label for="f-tripId">Viagem</label><select name="tripId" id="f-tripId">${selectTripOptions(e.tripId||getTrip()?.id)}</select></div>
+ <label style="display:block;font-weight:750;font-size:12px;margin:12px 0">Categoria</label><div class="quick-category">${CATS.map(([k,emoji,label])=>`<button type="button" data-action="choose-cat" data-cat="${k}" class="${category===k?'selected':''}"><span class="e">${emoji}</span>${label}</button>`).join('')}</div><input type="hidden" id="f-category" name="category" value="${esc(category)}">
+ <p class="small-note">Os lançamentos novos entram automaticamente no trecho atual (ida ou volta).</p><div class="form-grid">${field('Valor pago (R$)','amount',e.amount??'','text','inputmode="decimal" required placeholder="0,00"')}${field('Data','date',e.date||today(),'date','required')}</div>
+ <div id="fuel-fields" class="${category==='combustivel'?'':'hide'}"><div class="field"><label for="f-fuelKind">Qual combustível foi utilizado?</label><select id="f-fuelKind" name="fuelKind">${FUELS.map(([k,label])=>`<option value="${k}" ${fuelKind===k?'selected':''}>${label}</option>`).join('')}</select></div><div class="form-grid">${field('Quantidade abastecida','quantity',e.quantity??e.liters??'','text','inputmode="decimal" placeholder="Ex.: 35,5"')}${field('Odômetro (km)','odometer',e.odometer||'','text','inputmode="decimal"')}</div><div id="fuel-unit-info" class="fuel-unit-info" aria-live="polite"></div><label id="fuel-fulltank-wrap" class="checkline"><input name="fullTank" type="checkbox" ${e.fullTank?'checked':''}> Abasteceu até completar o tanque?</label><div id="fuel-help" class="form-tip">Registre o odômetro e dois abastecimentos completos do mesmo combustível para calcular o consumo real.</div></div>
+ ${field('Observação (opcional)','note',e.note||'','text','maxlength="180" placeholder="Ex.: almoço na estrada"')}${footer(id?'Salvar alterações':'Adicionar gasto')}
+ </form>${id?`<button class="btn danger wide" style="margin-top:8px" data-action="delete-expense" data-id="${esc(id)}">Excluir despesa</button>`:''}`,'expense',id);
+ $('f-fuelKind').addEventListener('change',updateFuelInputs);
+ updateFuelInputs();
+}
+function updateFuelInputs(){
+ const fuelSelect=$('f-fuelKind');if(!fuelSelect)return;
+ const [kind,,unit,label]=fuelConfig(fuelSelect.value);
+ // Evita reinterpretar silenciosamente litros como m³ ou kWh ao trocar a escolha.
+ if(fuelSelect.dataset.lastUnit && fuelSelect.dataset.lastUnit!==unit){const q=$('f-quantity');if(q)q.value='';}
+ fuelSelect.dataset.lastUnit=unit;
+ const labelElem=document.querySelector('label[for="f-quantity"]');if(labelElem)labelElem.textContent=label;
+ const field=$('f-quantity');if(field){field.setAttribute('aria-label',label);field.placeholder=unit==='L'?'Ex.: 35,5':unit==='m³'?'Ex.: 12,8':'Ex.: 40';}
+ const hint=$('fuel-unit-info');if(hint)hint.textContent='Unidade definida automaticamente: '+unit;
+ const tank=$('fuel-fulltank-wrap');if(tank){tank.classList.toggle('hide',kind==='eletrico');if(kind==='eletrico'&&tank.querySelector('input'))tank.querySelector('input').checked=false;}
+ const help=$('fuel-help');if(help)help.textContent=kind==='eletrico'
+ ?'Recargas são registradas em kWh. Não usamos a opção tanque cheio para veículos elétricos.'
+ :'Para medir o consumo real, registre o odômetro e abastecimentos completos consecutivos do mesmo combustível. Gasolina e etanol podem ser combinados no cálculo do trecho completo, usando litros e odômetro.';
+}
+function tripDetails(id){const t=data.trips.find(x=>x.id===id);if(!t)return;const p=plan(t),base=baselineBudget(t,p),s=spent(t),x=projected(t,p,s),fr=x.fr;const routeSaved=Number(t.routeKm)>0;
+ const steps=[t.origin,...(t.stops||[]),t.destination];
+ openModal(`${modalHeader('Detalhes da viagem')}<div class="eyebrow">${t.kind==='trabalho'?'💼 Trabalho':'🌴 Lazer'}</div><h2 style="font-size:23px;margin:6px 0">${esc(t.name)}</h2><div class="subtle">${esc(t.dateStart)} a ${esc(t.dateEnd)}</div>
+ <div class="route-box"><b>🗺️ Percurso planejado</b><div class="route-steps">${steps.map((z,i)=>`<span>${i+1}. ${esc(z)}</span>`).join('')}${t.roundTrip?'<span>↩ Ida e volta (formato antigo)</span>':t.returnFromTripId?'<span>↩ Viagem de retorno</span>':''}</div><div class="route-value">${kmFmt(tripKm(t))} km</div><div class="help">${t.manualKm>0?'Distância ajustada manualmente':routeSaved?'Distância calculada pelo Google': 'Distância ainda não definida'}${routeSaved&&t.manualKm>0?` • Google: ${kmFmt(t.routeKm)} km`:''}${t.routeDurationSeconds?` • ${kmFmt(t.routeDurationSeconds/3600)} h estimadas`:''}</div>
+ <div class="button-row"><button class="btn tiny" data-action="compute-route" data-id="${esc(t.id)}">📍 Calcular rota</button><button class="btn tiny secondary" data-action="set-distance" data-id="${esc(t.id)}">✎ Ajustar km</button></div><div style="margin-top:11px"><a class="fit-link" href="${esc(mapsLink(t))}" target="_blank" rel="noopener noreferrer">↗ Abrir trajeto no Google Maps</a></div></div>
+ <div class="info-row"><span>Pedágios totais no planejamento</span><b>${money(t.tollBudget)} ${t.tollSource==='google'?'(Google, estimativa)':t.tollSource==='retorno_copiado'?'(baseado na ida; confira)':'(informado)'}</b></div>
+ ${closingStatus(t)}
+ ${progressSummary(t)}
+ <div class="result-row"><div><small>Previsto inicial</small><strong>${money(base.total)}</strong></div><div><small>Realizado</small><strong>${money(s.total)}</strong></div><div><small>Projeção final</small><strong>${money(x.total)}</strong></div><div><small>Diferença prevista</small><strong class="${base.total-x.total<0?'over-text':'ok-text'}">${money(base.total-x.total)}</strong></div></div>
+ <div class="form-title">Combustível e consumo</div><div class="info-row"><span>Veículo</span><b>${esc(t.vehicleName||'Veículo avulso')}</b></div><div class="info-row"><span>Tipo</span><b>${esc(vehicleTypeLabel(t.vehicleOwnership))}</b></div><div class="info-row"><span>Consumo planejado</span><b>${kmFmt(t.fuelKmL)} km/${esc(fr.unit)}</b></div><div class="info-row"><span>Consumo medido</span><b>${fr.measured?kmFmt(fr.measured)+' km/'+esc(fr.unit):'Ainda não disponível'}</b></div><div class="info-row"><span>Quantidade estimada</span><b>${fr.effective>0?kmFmt(tripKm(t)/fr.effective)+' '+esc(fr.unit):'—'}</b></div><div class="info-row"><span>Preço médio abastecido</span><b>${money(fr.price)}/${esc(fr.unit)}</b></div><div class="info-row"><span>Km percorridos (odômetro)</span><b>${fr.traveled===null?'Não informado':kmFmt(fr.traveled)+' km'}</b></div><p class="small-note">Quando há um trecho restante atualizado, a projeção de combustível usa os quilômetros que faltam, o consumo estimado/medido e os valores já pagos. Sem atualização, considera odômetro ou distância total planejada. O relatório de cada trecho usa tanque cheio na saída e na chegada: gasolina e etanol podem ser somados em litros para calcular a média conjunta. Nunca somamos litros com m³ ou kWh.</p>
+ ${Object.keys(fr.measuredByKind).length?`<div class="form-tip">Médias medidas por combustível: ${Object.entries(fr.measuredByKind).map(([k,val])=>esc(fuelConfig(k)[1])+' '+kmFmt(val)+' km/'+esc(fuelConfig(k)[2])).join(' • ')}</div>`:''}
+ <div class="form-title">Despesas</div>${renderExpenseList(t.id,99)}
+ <div class="form-title">Ações</div><div class="utility-row"><button class="btn tiny" data-action="new-expense">＋ Gasto</button><button class="btn tiny secondary" data-action="edit-trip" data-id="${esc(t.id)}">Editar viagem</button><button class="btn tiny danger" data-action="delete-trip" data-id="${esc(t.id)}">Excluir viagem</button></div>`,'details',id);
+}
+function closingModal(id){
+ const t=data.trips.find(x=>x.id===id);if(!t)return;
+ const phase=stageOf(t);if(phase==='concluida'){tell('Esta viagem já foi finalizada.');return;}
+ const start=phase==='ida'?fnum(t.initialOdometer):fnum(closureOf(t,'ida')?.endOdo);
+ const fills=fuelFills(t,phase).filter(e=>e.fullTank&&fnum(e.odometer)>start&&fuelQuantity(e)>0&&expenseFuelUnit(e)!=='kWh');
+ const prev=fills.at(-1);
+ const desc=phase==='ida'?`${esc(t.origin)} → ${esc(t.destination)}`:`${esc(t.destination)} → ${esc(t.origin)}`;
+ openModal(`${modalHeader(t.roundTrip&&phase==='ida'?'Finalizar trecho de ida (legado)':'Finalizar viagem')}<p class="subtle">${desc}</p>
+ <div class="form-tip">⛽ Método tanque cheio a tanque cheio: o odômetro da saída e um abastecimento final com <b>tanque completo</b> são necessários. A reposição de chegada da ida poderá servir como referência da viagem de retorno.</div>
+ <form id="closing-form">
+ <div class="field"><label for="f-startOdo">Odômetro de saída deste trecho (km)</label><input id="f-startOdo" name="startOdo" inputmode="decimal" value="${esc(start||'')}" ${phase==='volta'?'readonly':''} required></div>
+ <label class="checkline"><input type="checkbox" name="startFullTank" ${phase==='volta'||t.returnFromTripId?'checked disabled':''}> Confirmo que o tanque estava cheio na saída</label>
+ <div class="field"><label for="f-endFuelId">Abastecimento que completou o tanque no destino</label><select id="f-endFuelId" name="endFuelId" required><option value="">Selecione o abastecimento final</option>${fills.map(f=>`<option value="${esc(f.id)}" ${prev?.id===f.id?'selected':''}>${esc(f.date)} • ${kmFmt(f.odometer)} km • ${kmFmt(fuelQuantity(f))} ${esc(expenseFuelUnit(f))} • ${money(f.amount)}</option>`).join('')}</select></div>
+ ${t.returnFromTripId?'<div class="form-tip">↩ O tanque foi registrado como cheio ao encerrar a ida. Confirme que permaneceu cheio antes de começar o retorno. Se houve uso do carro entre as viagens, complete o tanque novamente e ajuste o registro inicial.</div>':''}
+ ${!fills.length?'<div class="warning">Ainda não existe abastecimento de chegada com tanque cheio e odômetro maior que o de saída. Primeiro registre esse abastecimento em + Gasto → Combustível, marcando “Abasteceu até completar o tanque?”.</div>':''}
+ <p class="small-note">O aplicativo somará as reposições após a saída até a chegada. O abastecimento inicial pode estar entre seus gastos pagos, mas não será contado como consumo deste trecho.</p>
+ ${footer(phase==='ida'&&t.roundTrip?'Finalizar ida e iniciar volta':'Finalizar viagem')}
+ </form>`,'closing',id);
+}
+function submitClosing(form){
+ const t=data.trips.find(x=>x.id===editingId);if(!t)return;
+ const phase=stageOf(t),startOdo=fnum(form.elements.startOdo.value),endFuelId=form.elements.endFuelId.value;
+ if(phase==='concluida')return showError('Viagem já concluída.');
+ if(phase==='ida'&&!form.elements.startFullTank.checked)return showError('Confirme que saiu com o tanque cheio. Se não saiu, complete o tanque antes de iniciar a medição.');
+ if(startOdo<=0)return showError('Informe um odômetro válido na saída.');
+ const found=fuelFills(t,phase).find(e=>e.id===endFuelId);
+ if(!found||!found.fullTank||fuelQuantity(found)<=0)return showError('Selecione um abastecimento final válido com tanque cheio.');
+ if(fnum(found.odometer)<=startOdo)return showError('O odômetro final precisa ser maior que o inicial.');
+ const fills=fuelFills(t,phase),endIndex=fills.findIndex(e=>e.id===endFuelId);
+ if(fills.slice(0,endIndex+1).some(e=>(fnum(e.odometer)===0||fnum(e.odometer)>startOdo)&&fuelQuantity(e)<=0))return showError('Preencha a quantidade de todos os abastecimentos deste trecho antes de finalizar.');
+ if(phase==='volta'&&fnum(closureOf(t,'ida')?.endOdo)!==startOdo)return showError('O início da volta precisa ser igual ao final da ida.');
+ if(t.returnFromTripId && fnum(pairedOrigin(t)?.closures?.ida?.endOdo)!==startOdo)return showError('O odômetro inicial do retorno precisa coincidir com a chegada da ida.');
+ if(phase==='ida'){t.initialOdometer=startOdo;}
+ t.closures=t.closures||{};
+ t.closures[phase]={startOdo,endOdo:fnum(found.odometer),endFuelId,closedAt:Date.now(),startFull:true};
+ if(save()){closeModal();render();tripDetails(t.id);tell(phase==='ida'&&t.roundTrip?'Ida concluída! A volta está aberta para novos lançamentos.':'Viagem finalizada! Relatório disponível nos detalhes.');}
+}
+function reopenLast(id){
+ const t=data.trips.find(x=>x.id===id);if(!t?.closures)return;
+ const phase=t.closures.volta?'volta':t.closures.ida?'ida':null;if(!phase)return;
+ if(phase==='ida'&&stageExpenses(t,'volta').length){tell('Há lançamentos na volta da viagem antiga. Faça um backup antes de alterar a ida.');return;}
+ if(pairedReturn(t)){tell('Existe uma viagem de retorno vinculada. Para evitar diferenças no odômetro inicial, exclua primeiro o retorno (após fazer backup) ou mantenha a ida finalizada.');return;}
+ if(!confirm('Reabrir a '+phaseLabel(phase).toLowerCase()+'? O relatório dessa etapa será removido, mas os gastos registrados permanecerão.'))return;
+ delete t.closures[phase];
+ if(save()){closeModal();render();tripDetails(id);tell('Etapa reaberta para correções.');}
+}
+function mapsLink(t){
+ const pr=t.progress&&!t.progress.needsRecalc?t.progress:null;
+ const going=pr ? (pr.phase==='volta'?[pr.locationText||t.destination,...pr.stopsRemaining,t.origin]:[pr.locationText||t.origin,...pr.stopsRemaining,t.destination]) : [t.origin,...t.stops,t.destination];
+ const pts=going.slice();
+ if((pr?.phase==='ida'||!pr)&&t.roundTrip)pts.push(...(t.stops||[]).slice().reverse(),t.origin);
+ const params=new URLSearchParams({api:'1',origin:pts[0],destination:pts.at(-1),travelmode:'driving'});
+ if(pts.length>2)params.set('waypoints',pts.slice(1,-1).join('|'));
+ return 'https://www.google.com/maps/dir/?'+params.toString();
+}
+
+function createReturn(id){
+ const source=data.trips.find(x=>x.id===id);if(!source)return;
+ if(source.roundTrip){tell('Essa viagem antiga já inclui a volta. Finalize-a no formato original.');return;}
+ if(stageOf(source)!=='concluida'){tell('Finalize a viagem de ida antes de criar o retorno.');return;}
+ const linked=pairedReturn(source);if(linked){data.activeTripId=linked.id;save();closeModal();tab='inicio';render();tell('Retorno já criado: viagem aberta.');return;}
+ const closing=source.closures?.ida,end=data.expenses.find(e=>e.id===closing?.endFuelId);
+ if(!closing||!end||!end.fullTank){tell('Confira o fechamento da ida com o tanque cheio antes de criar o retorno.');return;}
+ closeModal();tripModal(null,source.id);
+}
+function settingsModal(){openModal(`${modalHeader('Opções e segurança')}<div class="card" style="box-shadow:none"><h3 style="margin:0 0 7px">💾 Seus dados</h3><p class="subtle">As viagens e despesas são salvas apenas neste aparelho. Não existe sincronização entre celulares nesta versão.</p><div class="utility-row"><button class="btn tiny" data-action="export-data">⬇ Fazer backup</button><button class="btn tiny secondary" data-action="import-data">⬆ Restaurar backup</button></div><input id="import-json" type="file" accept=".json,application/json" class="hide"></div>
+ <div class="card" style="margin-top:13px;box-shadow:none"><h3 style="margin:0 0 7px">🛡️ Privacidade</h3><p class="subtle">Cidades e, quando você autorizar, suas coordenadas naquele momento são enviadas ao Google para calcular a rota. O GPS não fica ligado continuamente pelo ViaCerta. Despesas e informações financeiras ficam apenas neste aparelho.</p></div>
+ <div class="card" style="margin-top:13px;box-shadow:none"><h3 style="margin:0 0 7px">📲 Instalar no celular</h3><p class="subtle">Após publicar em HTTPS, abra no Chrome e escolha “Adicionar à tela inicial” ou “Instalar aplicativo”.</p></div>
+ <div class="card" style="margin-top:13px;box-shadow:none"><h3 style="margin:0 0 7px">⚠ Limpar tudo</h3><p class="subtle">Essa ação apaga os dados deste navegador. Faça um backup antes.</p><button class="btn tiny danger" data-action="clear-data">Apagar todos os dados</button></div>`,'settings');}
+function distanceModal(id){const t=data.trips.find(x=>x.id===id);if(!t)return;openModal(`${modalHeader('Ajustar distância')}<p class="subtle">Informe a quilometragem deste percurso, incluindo eventuais desvios. A volta será outra viagem.</p><form id="distance-form">${field('Distância total (km)','km',t.manualKm||t.routeKm||'','text','required inputmode="decimal"')}<p class="small-note">Ajustar manualmente não apaga o último cálculo feito pelo Google.</p>${footer('Aplicar distância')}</form>`,'distance',id);}
+function progressModal(id){
+ const t=data.trips.find(x=>x.id===id);if(!t)return;
+ if(stageOf(t)==='concluida'){tell('Viagem finalizada. Para mudar a rota, reabra a última etapa.');return;}
+ const pr=t.progress||{},stage=stageOf(t)==='volta'?'volta':pr.phase||'ida';
+ openModal(`${modalHeader('Atualizar localização e percurso')}<p class="subtle">Use o GPS <b>apenas agora</b> ou informe a cidade atual. O ViaCerta não acompanha sua viagem continuamente.</p>
+ <form id="progress-form"><div class="field"><label for="f-phase">Você está em qual trecho?</label><select id="f-phase" name="phase">${stageOf(t)!=='volta'?`<option value="ida" ${stage==='ida'?'selected':''}>➡ Ida até ${esc(t.destination)}</option>`:''}${t.roundTrip?`<option value="volta" ${stage==='volta'?'selected':''}>↩ Volta até ${esc(t.origin)}</option>`:''}</select></div>
+ <div class="field"><label for="f-stopsRemaining">Cidades que AINDA faltam passar (uma por linha)</label><textarea id="f-stopsRemaining" name="stopsRemaining" rows="3" placeholder="Ex.: Nova Andradina, MS">${esc((pr.stopsRemaining|| (stage==='volta'?[...t.stops].reverse():t.stops)).join('\n'))}</textarea></div>
+ <div class="form-tip">Se já passou por uma cidade, remova-a desta lista para o Google não mandar você voltar. Para alterar o plano completo, use “Editar viagem”.</div>
+ <div class="field"><label for="f-locationText">Onde você está? (para modo manual)</label><input id="f-locationText" name="locationText" value="${esc(pr.locationText||'')}" placeholder="Ex.: Rondonópolis, MT" maxlength="130"></div>
+ <label class="checkline"><input type="checkbox" name="useGPS" checked> 📍 Tentar usar a localização atual do celular (requer permissão)</label>
+ <p class="small-note">Nesta versão publicada no GitHub Pages, informe quilômetros e pedágios manualmente. Cálculo automático requer backend separado.</p>
+ <div class="form-grid">${field('Km restantes (opcional / manual)','remainingKm',Number.isFinite(pr.remainingKm)?pr.remainingKm:'','text','inputmode="decimal" placeholder="Ex.: 1100"')}${field('Pedágios restantes (R$ / manual)','remainingToll',Number.isFinite(pr.remainingToll)?pr.remainingToll:'','text','inputmode="decimal" placeholder="Ex.: 95"')}</div>
+ <label class="checkline"><input type="checkbox" name="manualOnly" checked> Salvar distância e pedágios informados, sem consultar o Google</label>
+ ${footer('Atualizar trecho restante')}</form>`,'progress',id);
+ $('f-phase').addEventListener('change',e=>{
+  const p=e.target.value;$('f-stopsRemaining').value=(p==='volta'?[...(t.stops||[])].reverse():(t.stops||[])).join('\n');
+ });
+}
+function positionOnce(){return new Promise((resolve,reject)=>{
+ if(!navigator.geolocation)return reject(new Error('Este navegador não oferece geolocalização.'));
+ navigator.geolocation.getCurrentPosition(pos=>resolve({latitude:pos.coords.latitude,longitude:pos.coords.longitude,accuracy:Math.round(pos.coords.accuracy||0)}),e=>reject(new Error(e.code===1?'GPS não autorizado. Você pode informar sua cidade manualmente.':'Não foi possível obter a localização. Informe a cidade manualmente.')),{enableHighAccuracy:false,timeout:13000,maximumAge:0});
+});}
+async function callRoute(payload){
+ throw new Error('O cálculo automático do Google ainda não está ativo no GitHub Pages. Abra a rota no Google Maps e informe km e pedágios manualmente.');
+}
+
+async function submitProgress(form){
+ const t=data.trips.find(x=>x.id===editingId);if(!t)return;
+ const v=parseForm(form),phase=v.phase,stops=v.stopsRemaining.split('\n').map(x=>x.trim()).filter(Boolean);
+ if(stops.length>8)return showError('Use no máximo 8 cidades intermediárias.');
+ if(phase==='volta'&&!t.roundTrip)return showError('Esta viagem não foi planejada com retorno.');
+ if(phase!==stageOf(t))return showError('Atualize somente o trecho em andamento.');
+ const manual=Boolean(form.elements.manualOnly.checked);
+ const locationText=v.locationText.trim();
+ const rawKm=v.remainingKm.trim(),rawToll=v.remainingToll.trim();
+ if((rawKm && (fnum(rawKm)<0||!Number.isFinite(fnum(rawKm))))||(rawToll&&(fnum(rawToll)<0||!Number.isFinite(fnum(rawToll)))))return showError('Verifique os valores manuais.');
+ if(manual && (!rawKm||!locationText))return showError('Informe a cidade atual e os quilômetros restantes para salvar manualmente.');
+ const submitBtn=form.querySelector('[type=submit]');submitBtn.disabled=true;submitBtn.textContent='Atualizando...';
+ try{
+  let position=null;
+  if(!manual && form.elements.useGPS.checked){try{position=await positionOnce();}catch(error){if(!locationText)throw error;}}
+  if(!position&&!locationText)throw new Error('Informe sua cidade atual ou permita obter a localização.');
+  let result=null;
+  if(!manual){
+   result=await callRoute({mode:'remaining',origin:position||locationText,destination:phase==='ida'?t.destination:t.origin,stops,roundTrip:phase==='ida'&&t.roundTrip,returnDestination:t.origin,returnStops:[...(t.stops||[])].reverse(),includeTolls:true});
+  }
+  const remainingKm=manual?fnum(rawKm):result.distanceKm;
+  // Um campo vazio significa que o Google não retornou um preço confiável.
+  const remainingToll=manual?(rawToll?fnum(rawToll):null):(result.tollAvailable?result.tollBRL:null);
+  t.progress={phase,stopsRemaining:stops,locationText:locationText||(position?`${position.latitude.toFixed(5)}, ${position.longitude.toFixed(5)}`:''),position,remainingKm,remainingToll,checkedAt:Date.now(),source:manual?'manual':position?'gps':'cidade',needsRecalc:false};
+  if(save()){closeModal();render();tell(remainingToll===null?'Distância atualizada. Confira os pedágios manualmente.':'Distância e pedágios restantes atualizados!');}
+ }catch(error){showError(error.message||'Erro ao atualizar.');}
+ finally{const b=$('progress-form')?.querySelector('[type=submit]');if(b){b.disabled=false;b.textContent='Atualizar trecho restante';}}
+}
+function parseForm(form){return Object.fromEntries(new FormData(form).entries());}
+function numericGuard(values,names){return names.every(name=>fnum(values[name])>=0&&Number.isFinite(fnum(values[name])));}
+function submitTrip(form){let v=parseForm(form);const days=datesCount(v.dateStart,v.dateEnd);if(!v.name.trim()||!v.origin.trim()||!v.destination.trim())return showError('Preencha nome, origem e destino.');if(v.dateEnd<v.dateStart)return showError('A data final não pode ser anterior à saída.');if(days>730)return showError('Verifique as datas da viagem.');
+ const stops=v.stops.split('\n').map(z=>z.trim()).filter(Boolean);if(stops.length>8)return showError('Use até 8 paradas intermediárias.');
+ if(fnum(v.fuelKmL)<=0||fnum(v.fuelPrice)<=0||fnum(v.people)<1)return showError('Informe consumo, combustível e número de pessoas válidos.');
+ const nums=['fuelKmL','fuelPrice','manualKm','initialOdometer','people','foodPerDay','nights','nightRate','tollBudget','convenienceBudget','parkingBudget','otherBudget','reserveBudget','revenue'];if(!numericGuard(v,nums))return showError('Confira os valores: não podem ser negativos.');
+ const current=data.trips.find(t=>t.id===editingId);
+ if(current&&stageOf(current)==='concluida')return showError('Viagem finalizada. Reabra a última etapa antes de alterar o planejamento.');
+ if(current?.returnFromTripId && fnum(v.initialOdometer)!==fnum(pairedOrigin(current)?.closures?.ida?.endOdo))return showError('O odômetro inicial do retorno deve coincidir com o odômetro final da ida.');
+ const roundTrip=!!form.elements.roundTrip?.checked;
+ const routeChanged=current&&(current.origin!==v.origin.trim()||current.destination!==v.destination.trim()||JSON.stringify(current.stops)!==JSON.stringify(stops)||current.roundTrip!==roundTrip);
+ const obj={...(current||{}),id:editingId||uid(),createdAt:current?.createdAt||Date.now(),name:v.name.trim(),kind:v.kind,origin:v.origin.trim(),destination:v.destination.trim(),stops,roundTrip,dateStart:v.dateStart,dateEnd:v.dateEnd,vehicleId:v.vehicleId,vehicleName:v.vehicleName.trim(),vehicleOwnership:v.vehicleOwnership||'proprio',fuelType:v.fuelType.trim(),fuelKmL:fnum(v.fuelKmL),fuelPrice:fnum(v.fuelPrice),people:fnum(v.people),foodPerDay:fnum(v.foodPerDay),nights:fnum(v.nights),nightRate:fnum(v.nightRate),tollBudget:fnum(v.tollBudget),convenienceBudget:fnum(v.convenienceBudget),parkingBudget:fnum(v.parkingBudget),otherBudget:fnum(v.otherBudget),reserveBudget:fnum(v.reserveBudget),revenue:fnum(v.revenue),initialOdometer:fnum(v.initialOdometer),manualKm:fnum(v.manualKm)};
+ if(!current && pendingTrip){
+   const source=data.trips.find(t=>t.id===pendingTrip);
+   if(!source||stageOf(source)!=='concluida'||pairedReturn(source))return showError('Não foi possível vincular o retorno. Confira se a ida está concluída.');
+   obj.returnFromTripId=source.id;obj.direction='retorno';obj.initialOdometer=fnum(source.closures?.ida?.endOdo);obj.initialTankFromTripId=source.id;obj.tollSource='retorno_copiado';
+ }
+ if(routeChanged){obj.routeKm=0;obj.routeDurationSeconds=0;obj.routeKey=null;obj.tollSource='manual';
+   if(current?.progress)obj.progress={...current.progress,needsRecalc:true};
+   if(current&&fnum(v.manualKm)===fnum(current.manualKm))obj.manualKm=0;
+ }
+ refreshBaseline(obj);
+ if(current)Object.assign(current,obj);else data.trips.unshift(obj);data.activeTripId=obj.id;
+ if(save()){const wasReturn=!!(!current&&pendingTrip);closeModal();tab='inicio';render();tell(current?'Viagem atualizada.':wasReturn?'Retorno criado! Os gastos desta viagem ficam separados da ida.':'Viagem criada! Agora você pode planejar os custos.');}}
+function submitVehicle(form){const v=parseForm(form);if(!v.name.trim()||fnum(v.kmL)<=0||fnum(v.price)<=0)return showError('Informe nome, consumo e preço válidos.');const curr=data.vehicles.find(x=>x.id===editingId);const obj={id:editingId||uid(),name:v.name.trim(),ownership:v.ownership||'proprio',fuelType:v.fuelType.trim(),kmL:fnum(v.kmL),price:fnum(v.price)};if(curr)Object.assign(curr,obj);else data.vehicles.push(obj);if(save()){closeModal();render();tell('Veículo salvo.');}}
+function submitExpense(form){
+ const v=parseForm(form),isFuel=v.category==='combustivel';
+ if(!data.trips.find(t=>t.id===v.tripId)||fnum(v.amount)<=0)return showError('Escolha uma viagem e informe um valor maior que zero.');
+ if(isFuel&&v.quantity&&fnum(v.quantity)<=0)return showError('Confira a quantidade abastecida.');
+ if(v.odometer&&fnum(v.odometer)<0)return showError('Confira o odômetro.');
+ const kind=isFuel?fuelConfig(v.fuelKind)[0]:null,unit=isFuel?fuelConfig(kind)[2]:null;
+ const curr=data.expenses.find(x=>x.id===editingId);
+ const expenseTrip=data.trips.find(t=>t.id===v.tripId);
+ if(!curr&&stageOf(expenseTrip)==='concluida')return showError('Viagem finalizada. Reabra a última etapa antes de lançar novos gastos.');
+ if(curr&&isStageClosed(expenseTrip,curr.phase||'ida'))return showError('Esta etapa já foi finalizada. Reabra a etapa para editar o lançamento.');
+ if(curr&&curr.tripId!==v.tripId)return showError('Não é possível transferir uma despesa já salva entre viagens. Crie um novo lançamento.');
+ if(curr&&data.trips.some(t=>t.closures&&Object.values(t.closures).some(c=>c.endFuelId===curr.id)))return showError('Este abastecimento é o marco final de uma etapa. Reabra a etapa antes de alterá-lo.');
+ const obj={id:editingId||uid(),createdAt:curr?.createdAt||Date.now(),tripId:v.tripId,phase:curr?.phase||stageOf(expenseTrip),category:v.category,amount:fnum(v.amount),date:v.date,note:v.note.trim(),
+  fuelKind:kind,fuelUnit:unit,quantity:isFuel?fnum(v.quantity):0,
+  // Compatibilidade com backups antigos: litros só quando a unidade é L.
+  liters:isFuel&&unit==='L'?fnum(v.quantity):0,
+  odometer:isFuel?fnum(v.odometer):0,
+  fullTank:isFuel&&unit!=='kWh'&&Boolean(form.elements.fullTank.checked)};
+ if(curr)Object.assign(curr,obj);else data.expenses.push(obj);
+ if(isFuel)data.lastFuelKind=kind;
+ if(save()){closeModal();render();tell('Gasto registrado com sucesso.');}
+}
+function showError(message){const el=$('form-error');if(el)el.textContent=message;else tell(message);}
+function exportData(){const backup={app:'ViaCerta',version:1,exportedAt:new Date().toISOString(),data};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ViaCerta_backup_'+today()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);tell('Backup preparado. Guarde o arquivo em local seguro.');}
+async function importData(file){if(!file)return;try{if(file.size>5_000_000)throw Error('Arquivo muito grande.');const obj=JSON.parse(await file.text());const imported=obj?.app==='ViaCerta'&&obj?.data;if(!imported||!Array.isArray(imported.trips)||!Array.isArray(imported.expenses)||!Array.isArray(imported.vehicles))throw Error('Backup inválido.');if(!confirm('Restaurar este backup? Os dados atuais deste aparelho serão substituídos.'))return;data={...defaults(),...imported};migrateOlderTrips();save();closeModal();tab='inicio';render();tell('Backup restaurado.');}catch(err){alert(err?.message||'Não foi possível restaurar.');}}
+function routeKey(t){return JSON.stringify([t.origin,t.destination,t.stops||[],!!t.roundTrip]);}
+async function computeRoute(id){
+ const t=data.trips.find(x=>x.id===id);if(!t)return;
+ if(t.routeKey===routeKey(t)&&t.routeKm>0){tell('Essa rota já está salva. Para atualizar o restante, use “Atualizar localização”.');return;}
+ const btn=document.querySelector('[data-action="compute-route"]');if(btn){btn.disabled=true;btn.textContent='Consultando Google...';}
+ try{
+  const payload=await callRoute({mode:'initial',origin:t.origin,destination:t.destination,stops:t.stops||[],roundTrip:!!t.roundTrip,returnDestination:t.origin,returnStops:[...(t.stops||[])].reverse(),includeTolls:true});
+  t.routeKm=payload.distanceKm;t.routeDurationSeconds=payload.durationSeconds||0;t.routeKey=routeKey(t);t.manualKm=0;
+  if(payload.tollAvailable){t.tollBudget=Number(payload.tollBRL.toFixed(2));t.tollSource='google';}
+  else t.tollSource='manual';
+  refreshBaseline(t);
+  save();tripDetails(id);render();
+  tell(payload.tollAvailable?'Distância e pedágios estimados pelo Google!':'Distância calculada. Pedágios não disponíveis: informe manualmente.');
+ }catch(e){tell(e.message||'Erro ao calcular.');if(btn){btn.disabled=false;btn.textContent='📍 Calcular rota';}}
+}
+
+function action(name,id,elem){switch(name){case 'new-trip':closeModal();tripModal();break;case 'create-return':createReturn(id);break;case 'compare-trip':compareTripModal(id);break;case 'edit-trip':closeModal();tripModal(id);break;case 'new-vehicle':closeModal();vehicleModal();break;case 'edit-vehicle':closeModal();vehicleModal(id);break;case 'new-expense':closeModal();expenseModal();break;case 'edit-expense':closeModal();expenseModal(id);break;case 'trip-detail':tripDetails(id);break;case 'select-trip':closeModal();data.activeTripId=id;save();tab='inicio';render();tell('Viagem selecionada.');break;case 'set-distance':distanceModal(id);break;case 'compute-route':computeRoute(id);break;case 'progress':progressModal(id);break;case 'close-stage':closingModal(id);break;case 'reopen-stage':reopenLast(id);break;case 'close-modal':closeModal();break;case 'choose-cat':category=elem.dataset.cat;$('f-category').value=category;document.querySelectorAll('[data-action="choose-cat"]').forEach(b=>b.classList.toggle('selected',b.dataset.cat===category));$('fuel-fields').classList.toggle('hide',category!=='combustivel');break;case 'export-data':exportData();break;case 'import-data':$('import-json').click();break;
+ case 'delete-expense':if(data.trips.some(t=>isStageClosed(t,(data.expenses.find(e=>e.id===id)?.phase||'ida'))&&data.expenses.find(e=>e.id===id)?.tripId===t.id)){tell('Reabra a etapa antes de excluir esse lançamento.');break;}if(confirm('Excluir este lançamento?')){data.expenses=data.expenses.filter(x=>x.id!==id);save();closeModal();render();tell('Despesa excluída.');}break;
+ case 'delete-vehicle':if(confirm('Excluir o veículo cadastrado? As viagens anteriores não serão apagadas.')){data.vehicles=data.vehicles.filter(x=>x.id!==id);save();render();tell('Veículo excluído.');}break;
+ case 'delete-trip':if(pairedReturn(data.trips.find(x=>x.id===id)||{})){tell('Há um retorno vinculado a esta ida. Faça backup e exclua o retorno antes de apagar a ida.');break;}if(confirm('Excluir esta viagem e todas as suas despesas? Esta ação não poderá ser desfeita.')){data.trips=data.trips.filter(x=>x.id!==id);data.expenses=data.expenses.filter(x=>x.tripId!==id);if(data.activeTripId===id)data.activeTripId=data.trips[0]?.id||null;save();closeModal();render();tell('Viagem excluída.');}break;
+ case 'clear-data':if(confirm('APAGAR todas as viagens, despesas e veículos? Faça um backup antes.')&&confirm('Confirmar exclusão definitiva dos dados neste aparelho?')){data=defaults();save();closeModal();tab='inicio';render();tell('Dados locais apagados.');}break;
+ }}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-action],[data-nav]');if(!b)return;if(b.dataset.nav){tab=b.dataset.nav;render();return;}if(b.dataset.action){e.preventDefault();action(b.dataset.action,b.dataset.id,b);}});
+document.addEventListener('submit',e=>{const f=e.target;if(!['trip-form','vehicle-form','expense-form','distance-form','progress-form','closing-form'].includes(f.id))return;e.preventDefault();if(f.id==='trip-form')submitTrip(f);if(f.id==='vehicle-form')submitVehicle(f);if(f.id==='expense-form')submitExpense(f);if(f.id==='progress-form')submitProgress(f);if(f.id==='closing-form')submitClosing(f);if(f.id==='distance-form'){const t=data.trips.find(x=>x.id===editingId);const val=fnum(f.elements.km.value);if(!t||val<=0)return showError('Informe uma distância maior que zero.');t.manualKm=val;refreshBaseline(t);save();closeModal();render();tell('Quilometragem ajustada.');}});
+document.addEventListener('change',e=>{if(e.target?.id==='import-json')importData(e.target.files?.[0]);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modalType)closeModal();});
+$('btn-settings').addEventListener('click',settingsModal);
+migrateOlderTrips();
+render();
+
+})();
+
+</script>
+</body>
+</html>
