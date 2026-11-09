@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#103950">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="description" content="ViaCerta: planeje sua viagem e controle cada gasto até o destino.">
   <meta name="color-scheme" content="light">
   <title>ViaCerta — Sua viagem sob controle</title>
@@ -609,6 +614,16 @@ render();
 
 })();
 
+</script>
+<script>
+// Instala o suporte offline somente na hospedagem HTTPS. Não afeta viagens nem localStorage.
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname))) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch((err) => {
+      console.warn('ViaCerta: suporte offline indisponível nesta sessão.', err);
+    });
+  });
+}
 </script>
 </body>
 </html>
