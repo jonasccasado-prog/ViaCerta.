@@ -1,7 +1,7 @@
 /* ViaCerta — offline para dados salvos localmente. Não rastreia localização. */
-const CACHE = 'viacerta-pwa-shell-1-5-1';
+const CACHE = 'viacerta-pwa-shell-1-5-2';
 const BASE = self.registration.scope;
-const FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
+const FILES = ['./', './index.html', './manifest.webmanifest', './viacerta-logo-192-v2.png', './viacerta-logo-512-v2.png'];
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(FILES)));
   self.skipWaiting();
